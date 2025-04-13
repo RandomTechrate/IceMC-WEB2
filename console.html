@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Console</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="top-buttons">
+    <button onclick="window.location.href='/dashboard'">Back</button>
+    <button onclick="stopServer()">Stop Server</button>
+    <button onclick="restartServer()">Restart Server</button>
+</div>
+<div id="console-container">
+    <h1>Console</h1>
+    <div id="console-output">Fetching logs...</div>
+    <label for="command-input"></label><input id="command-input" placeholder="Enter command">
+    <button onclick="executeCommand()">Execute</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
