@@ -1,0 +1,328 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.preloader-logo {
+    width: 150px;
+    height: 150px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* General */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-attachment: fixed; /* Keep this here for general background behavior if needed for fallback */
+    background-position: center; /* Keep this here for general background behavior if needed for fallback */
+    min-height: 100vh; /* Ensure background covers full viewport height */
+    font-size: 16px; /* Default font size */
+    line-height: 1.6; /* Improve readability */
+    position: relative; /* Needed for pseudo-element positioning */
+    z-index: 1; /* Ensure content is above the pseudo-element */
+}
+
+body::before {
+    content: '';
+    position: fixed; /* Fixed background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../photos/icemc-logo.png');
+    background-size: 80% auto; /* Make the logo larger */
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0.7) opacity(0.3); /* Apply filter here */
+    z-index: -1; /* Place behind content */
+}
+
+.container {
+    max-width: 960px;
+    width: 90%;
+    padding: 2rem;
+    margin: 2rem auto;
+    background-color: rgba(42, 42, 42, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(26, 26, 26, 0.9);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.nav-logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-item a:hover {
+    color: #00aaff;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: #00aaff;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #cccccc;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #00aaff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0088cc;
+}
+
+/* Sections */
+h2 {
+    color: #00aaff;
+    border-bottom: 2px solid #00aaff;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+/* Features */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item {
+    background-color: rgba(51, 51, 51, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.feature-item i {
+    font-size: 3rem;
+    color: #00aaff;
+    margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Server Info */
+.server-info p {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+#ip-address {
+    background-color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#copy-ip {
+    background: #00aaff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#copy-ip:hover {
+    background-color: #0088cc;
+}
+
+/* Discord */
+.discord-button {
+    background-color: #7289da;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.discord-button:hover {
+    background-color: #5f73bc;
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    background-color: rgba(26, 26, 26, 0.9);
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-logo img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    .server-info p {
+        font-size: 1rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #copy-ip {
+        padding: 6px 10px;
+    }
+
+    .discord-button {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}
